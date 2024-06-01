@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+
+    <title>Resume Generator</title>
+</head>
+<body>
+
+    <!--home page-->
+    <div class="my-5" id="home">
+
+        <header>
+            <h1>ResumeCraft</h1>
+            <br>
+            <h5>Embark on your journey to career success with ResumeCraft, the premier online resume generator.</h5>
+            <hr><br>
+        </header>
+        <p class="text-center"> Our intuitive platform empowers you to showcase your skills and accomplishments with style and confidence, effortlessly paving the way to your dream job.</p>
+        <h6 class="text-center">Select a resume template:</h6><br><br>
+
+        <div class="container mycontainer" style="border:none" id="templates">
+
+            <div class="imgcontainer" id="img1">
+                <button class="select-cv" onclick="information('cv-form1')">
+                
+                    <img src="templates/1716988871526.jpg" alt="template1" srcset="">
+                </button>
+
+            </div>
+
+            <div class="imgcontainer" id="img2">
+                <button class="select-cv" onclick="information('cv-form2')">
+                   
+                    <img src="templates/1716988935677.jpg" alt="template2" srcset="">
+                </button>
+            </div>
+
+            
+        </div>
+    </div>
+
+    <!--cv form for image 1-->
+    <div class="container my-3 cv-form" id="cv-form1">
+        <h1 class="text-center my-2">Resume Generator</h1>
+        
+        <div class="row my-4">
+
+            <!--left part-->
+            <div class="col-md-6">
+                <h4 class="text-center">Personal Information</h4>
+
+                <!--name field-->
+                <div class="form-group my-3">
+                    <label for="nameField1">Your Name</label>
+                    <input type="text" id="nameField1" placeholder="Enter here" class="form-control name" >
+                </div>
+
+
+                <!--email field-->
+                <div class="form-group my-2">
+                    <label for="emailField1">Email id</label>
+                    <input type="text" id="emailField1" placeholder="Enter here" class="form-control emailid" >
+                </div>
+
+                <!--address field-->
+                <div class="form-group my-2">
+                    <label for="addressField1">Address</label>
+                    <textarea id="addressField1" rows="5" placeholder="Enter here" class="form-control address"></textarea>
+                </div>
+
+                <!--link section-->
+                <div class="form-group my-2">
+                    <label for="linkedField1">LinkedIn Id</label>
+                    <input type="text" id="linkedField1" placeholder="Enter here" class="form-control linkedin">
+                </div>
+
+                <!--job role field-->
+                <div class="form-group my-2">
+                    <label for="jobField1">Your Job role</label>
+                    <input type="text" id="jobField1" placeholder="Enter here" class="form-control jobrole">
+                </div>
+
+                
+
+            </div>
+
+            <!--right part-->
+            <div class="col-md-6">
+                <h4 class="text-center">Professional Information</h4>              
+
+                <!--technical skill part-->
+                <div class="form-group my-3" id="skill1">
+                    <label for=" ">Technical Skills</label>
+                    <textarea rows="2" placeholder="Enter here" class="form-control skillField"></textarea>
+                    <div class=" text-center my-2" id="skillAddButton1">
+                        <button class="btn btn-primary btn-sm" onclick="addSkillfield('skill1','skillAddButton1')">Add</button>
+                    </div>
+                </div>
+
+                <!--project part-->
+                <div class="form-group my-2" id="p1">
+                    <label for=" ">Projects</label>
+                    <textarea rows="3" placeholder="Enter here" class="form-control pField"></textarea>
+                    <div class="text-center my-2" id="pAddButton1">
+                        <button class="btn btn-primary btn-sm" onclick="addPfield('p1','pAddButton1')">Add</button>
+                    </div>
+                </div>
+
+
+                <!--work experience part-->
+                <div class="form-group my-2" id="we1">
+                    <label for=" ">Work Experience</label>
+                    <textarea rows="3" placeholder="Enter here" class="form-control weField"></textarea>
+                    <div class="text-center my-2" id="weAddButton1">
+                        <button class="btn btn-primary btn-sm" onclick="addWEfield('we1','weAddButton1')">Add</button>
+                    </div>
+                </div>
+
+                <!--academic part-->
+                <div class="form-group my-2" id="aq1">
+                    <label for=" ">Education</label>
+                    <textarea rows="3" placeholder="Enter here" class="form-control aqField"></textarea>
+                    <div class="text-center my-2" id="aqAddButton1">
+                        <button class="btn btn-primary btn-sm" onclick="addAQfield('aq1','aqAddButton1')">Add</button>
+                    </div>
+                </div>
+
+                <!--achievements part-->
+                <div class="form-group my-2" id="aw1">
+                    <label for=" ">Awards & Achievements</label>
+                    <textarea rows="3" placeholder="Enter here" class="form-control awField"></textarea>
+                    <div class="text-center my-2" id="awAddButton1">
+                        <button class="btn btn-primary btn-sm" onclick="addAwfield('aw1','awAddButton1')">Add</button>
+                    </div>
+                </div>
+
+
+            </div>
+            
+
+        </div>
+
+        <!--submit part-->
+        <div class=" text-center my-4">
+            <button onclick="generateCV('cv-form1','cv-template1')" class="btn btn-primary btn lg">Generate CV</button>
+        </div>
+
+    </div> 
+
+    <!--cv form for template 2-->
+    <div class="container my-3 cv-form" id="cv-form2">
+
+        <h1 class="text-center my-2">Resume Generator</h1>
+        
+        <div class="row my-4">
+
+            <!--left part-->
+            <div class="col-md-6">
+                <h4 class="text-center">Personal Information</h4>
+
+                <!--name field-->
+                <div class="form-group my-3">
+                    <label for="nameField2">Your Name</label>
+                    <input type="text" id="nameField2" placeholder="Enter here" class="form-control name" >
+                </div>
+
+
+                <!--email field-->
+                <div class="form-group my-2">
+                    <label for="emailField2">Email id</label>
+                    <input type="text" id="emailField2" placeholder="Enter here" class="form-control emailid">
+                </div>
+
+                <!--address field-->
+                <div class="form-group my-2">
+                    <label for="addressField2">Address</label>
+                    <textarea id="addressField2" rows="5" placeholder="Enter here" class="form-control address"></textarea>
+                </div>
+
+                <!--link section-->
+                <div class="form-group my-2">
+                    <label for="linkedField2">LinkedIn Id</label>
+                    <input type="text" id="linkedField2" placeholder="Enter here" class="form-control linkedin">
+                </div>
+
+                <!--job role field-->
+                <div class="form-group my-2">
+                    <label for="jobField2">Your Job role</label>
+                    <input type="text" id="jobField2" placeholder="Enter here" class="form-control jobrole">
+                </div>
+
+                
+
+            </div>
+
+            <!--right part-->
+            <div class="col-md-6">
+                <h4 class="text-center">Professional Information</h4>
+
+                <!--objective part-->
+                <div class="form-group my-3">
+                    <label for="">Objective</label>
+                    <textarea rows="5" placeholder="Enter here" class="form-control objF"></textarea>
+                </div>
+
+                
+
+                <!--technical skill part-->
+                <div class="form-group my-3" id="skill2">
+                    <label for=" ">Technical Skills</label>
+                    <textarea rows="2" placeholder="Enter here" class="form-control skillField"></textarea>
+                    <div class="text-center my-2" id="skillAddButton2">
+                        <button class="btn btn-primary btn-sm" onclick="addSkillfield('skill2','skillAddButton2')">Add</button>
+                    </div>
+                </div>
+
+                <!--work experience part-->
+                <div class="form-group my-2" id="we2">
+                    <label for=" ">Work Experience</label>
+                    <textarea rows="3" placeholder="Enter here" class="form-control weField"></textarea>
+                    <div class="text-center my-2" id="weAddButton2">
+                        <button class="btn btn-primary btn-sm" onclick="addWEfield('we2','weAddButton2')">Add</button>
+                    </div>
+                </div>
+
+                <!--academic part-->
+                <div class="form-group my-2" id="aq2">
+                    <label for=" ">Education</label>
+                    <textarea rows="3" placeholder="Enter here" class="form-control aqField"></textarea>
+                    <div class="text-center my-2" id="aqAddButton2">
+                        <button class="btn btn-primary btn-sm" onclick="addAQfield('aq2','aqAddButton2')">Add</button>
+                    </div>
+                </div>
+
+            </div>
+            
+
+        </div>
+
+        <!--submit part-->
+        <div class="text-center my-4">
+            <button onclick="generateCV('cv-form2','cv-template2')" class="btn btn-primary btn lg">Generate CV</button>
+        </div>
+
+    </div>
+
+    
+
+    <!--cv templates-->
+    <!--cv template 1-->
+    <div class="container my-3 cv-template" id="cv-template1">
+
+        <div class="text-center py-4">
+
+            <div class="name-container">
+                <h1 class="nameT">OLIVIA WILSON</h1>
+            </div>
+
+            <div class="contact-container">
+                <span class="addressT">Address</span>
+                <span class="emailidT">Mail</span>
+                <span class="linkedinT" style="border:none">Website</span>
+            </div>
+            
+            <div class="job-container py-4">
+                <h5 class="jobroleT">SOFTWARE ENGINEER</h5>
+            </div>
+
+        </div>
+
+        <div class="content-container">
+
+            <div class="card">
+                <div class=" card-header background1">
+                    <h6>TECHNICAL SKILLS</h6>
+                </div>
+                <div class="card-body">
+                    <ul class="skillT">
+                        <li>Lorem, ipsum.</li>
+                        <li>Lorem, ipsum.</li>
+                        <li>Lorem, ipsum.</li>
+                        <li>Lorem, ipsum.</li>
+                        <li>Lorem, ipsum.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header background1">
+                    <h6>PROJECTS</h6>
+                </div>
+                <div class="card-body">
+                    <ul class="projectT">
+                        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque dolore animi cumque ex expedita rerum officia aliquam quis eaque ab.</li>
+                        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque dolore animi cumque ex expedita rerum officia aliquam quis eaque ab.</li>
+                        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque dolore animi cumque ex expedita rerum officia aliquam quis eaque ab.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header background1">
+                    <h6>EDUCATION</h6>
+                </div>
+                <div class="card-body">
+                    <ul class="aqT">
+                        <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic similique corrupti earum sunt, saepe id?</li>
+                        <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic similique corrupti earum sunt, saepe id?</li>
+                        <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic similique corrupti earum sunt, saepe id?</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header background1">
+                    <h6>WORK EXPERIENCE</h6>
+                </div>
+                <div class="card-body">
+                    <ul class="weT">
+                        <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quae ut commodi aspernatur fugiat temporibus quibusdam ipsa deserunt ullam ratione unde.</li>
+                        <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quae ut commodi aspernatur fugiat temporibus quibusdam ipsa deserunt ullam ratione unde.</li>
+                        <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quae ut commodi aspernatur fugiat temporibus quibusdam ipsa deserunt ullam ratione unde.</li>
+
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header background1">
+                    <h6>AWARDS & ACHIEVEMENTS</h6>
+                </div>
+                <div class="card-body">
+                    <ul class="awT">
+                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod.</li>
+                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod.</li>
+                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod.</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+        <div class=" mt-3 text-center">
+
+            <button onclick="printCV('cv-template1')" id="print" class="btn btn-primary btn lg">Print CV</button>
+
+        </div>
+        
+    </div>
+
+    <!--cv template 2-->
+    <div class="container my-3 cv-template" id="cv-template2">
+
+        <div class="bord">
+            <div class="name-container">
+                <h1 clas="nameT">ESTELLE DARCY</h1>
+            </div>
+            <div class="job-container">
+                <h6 class="jobroleT">SOCIAL MEDIA MANAGER</h6>
+            </div>
+    
+            <div class="objective-container">
+                <p class="objT">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium recusandae voluptatibus quod quaerat nihil in voluptas dolorum quidem maiores, eum quis, excepturi quo deserunt expedita ullam neque animi aliquid dignissimos?</p>
+                
+            </div>
+        </div>
+
+        <div class="bord temp2-container">
+            <div class="">
+                <h6>SKILLS</h6>
+            </div>
+
+            <div class="">
+                <ul class="skillT">
+                    <li>Lorem ipsum dolor sit.</li>
+                    <li>Lorem ipsum dolor sit.</li>
+                    <li>Lorem ipsum dolor sit.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="bord temp2-container">
+            <div class="">
+                <h6>EDUCATION</h6>
+            </div>
+
+            <div class="">
+                <ul class="aqT">
+                    <li>Lorem ipsum dolor sit.</li>
+                    <li>Lorem ipsum dolor sit.</li>
+                    <li>Lorem ipsum dolor sit.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="bord temp2-container">
+            <div class="">
+                <h6>EXPERIENCE</h6>
+            </div>
+
+            <div class="">
+                <ul class="weT">
+                    <li>Lorem ipsum dolor sit.</li>
+                    <li>Lorem ipsum dolor sit.</li>
+                    <li>Lorem ipsum dolor sit.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="temp2-container">
+            <div class="">
+                <h6>CONTACT</h6>
+            </div>
+
+            <div class="">
+                <p class="emailidT">Mail Id</p>
+                <p class="linkedinT">linkedin id</p>
+                <p class="addressT">Address</p>
+
+            </div>
+        </div>
+
+        <div class=" mt-3 text-center">
+
+            <button onclick="printCV()" id="print" class="btn btn-primary btn lg">Print CV</button>
+
+        </div>
+
+    </div>
+
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>
+

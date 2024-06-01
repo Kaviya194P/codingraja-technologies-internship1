@@ -1,0 +1,65 @@
+
+header{
+    text-align: center;
+}
+
+div.mycontainer{
+    display:grid;
+    grid-template-columns: 50% 50%;
+    place-items: center;
+    
+}
+
+.mycontainer div{
+    place-items: center;
+    
+}
+
+img{
+    height:400px;
+}
+
+.cv-form{
+    display: none;
+}
+
+.cv-template{display: none;}
+
+.container{
+    border:1px solid black;
+}
+
+
+.contact-container span{
+    display:inline-block;
+    margin-right: 1px;
+    padding:5px;
+    border-right:1px solid black
+}
+
+.background1{
+    background:rgb(167, 201, 186)
+    
+}
+.card{
+    border:none;
+}
+
+#cv-template2{
+    padding:6%;
+    background: rgb(248, 243, 234);
+}
+
+
+.bord{
+    border-bottom:1.5px solid black;
+}
+
+.temp2-container{
+    display:grid;
+    grid-template-columns:30% 70%;
+}
+
+.no-list-type{
+    list-style-type:none;
+}
